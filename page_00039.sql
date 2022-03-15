@@ -1,0 +1,86 @@
+prompt --application/pages/page_00039
+begin
+--   Manifest
+--     PAGE: 00039
+--   Manifest End
+wwv_flow_api.component_begin (
+ p_version_yyyy_mm_dd=>'2021.10.15'
+,p_release=>'21.2.0'
+,p_default_workspace_id=>1472407722091150
+,p_default_application_id=>136
+,p_default_id_offset=>0
+,p_default_owner=>'BMS'
+);
+wwv_flow_api.create_page(
+ p_id=>39
+,p_user_interface_id=>wwv_flow_api.id(68390722219935005)
+,p_name=>'blank_trndtl'
+,p_alias=>'BLANK-TRNDTL'
+,p_step_title=>'blank_trndtl'
+,p_autocomplete_on_off=>'OFF'
+,p_step_template=>wwv_flow_api.id(68215616165933137)
+,p_page_template_options=>'#DEFAULT#'
+,p_protection_level=>'C'
+,p_last_updated_by=>'OLIUR'
+,p_last_upd_yyyymmddhh24miss=>'20220307181525'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(72687920852487036)
+,p_plug_name=>'New'
+,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
+,p_plug_template=>wwv_flow_api.id(68293448319933961)
+,p_plug_display_sequence=>20
+,p_include_in_reg_disp_sel_yn=>'Y'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_attribute_01=>'N'
+,p_attribute_02=>'HTML'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(72688030303487037)
+,p_plug_name=>'left_column'
+,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
+,p_plug_template=>wwv_flow_api.id(68293448319933961)
+,p_plug_display_sequence=>10
+,p_include_in_reg_disp_sel_yn=>'Y'
+,p_plug_display_point=>'REGION_POSITION_02'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_attribute_01=>'N'
+,p_attribute_02=>'HTML'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(72688182230487038)
+,p_name=>'P39_SEARCH'
+,p_item_sequence=>10
+,p_item_plug_id=>wwv_flow_api.id(72688030303487037)
+,p_prompt=>'Search'
+,p_display_as=>'NATIVE_TEXT_FIELD'
+,p_cSize=>30
+,p_field_template=>wwv_flow_api.id(68363211348934495)
+,p_item_template_options=>'#DEFAULT#'
+,p_attribute_01=>'N'
+,p_attribute_02=>'N'
+,p_attribute_04=>'SEARCH'
+,p_attribute_05=>'BOTH'
+);
+wwv_flow_api.create_page_da_event(
+ p_id=>wwv_flow_api.id(72688234724487039)
+,p_name=>'Search'
+,p_event_sequence=>10
+,p_triggering_element_type=>'ITEM'
+,p_triggering_element=>'P39_SEARCH'
+,p_bind_type=>'bind'
+,p_bind_event_type=>'change'
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(72688312008487040)
+,p_event_id=>wwv_flow_api.id(72688234724487039)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_REFRESH'
+,p_affected_elements_type=>'ITEM'
+,p_affected_elements=>'P39_SEARCH'
+);
+wwv_flow_api.component_end;
+end;
+/

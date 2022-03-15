@@ -1,0 +1,79 @@
+prompt --application/pages/page_00013
+begin
+--   Manifest
+--     PAGE: 00013
+--   Manifest End
+wwv_flow_api.component_begin (
+ p_version_yyyy_mm_dd=>'2021.10.15'
+,p_release=>'21.2.0'
+,p_default_workspace_id=>1472407722091150
+,p_default_application_id=>136
+,p_default_id_offset=>0
+,p_default_owner=>'BMS'
+);
+wwv_flow_api.create_page(
+ p_id=>13
+,p_user_interface_id=>wwv_flow_api.id(68390722219935005)
+,p_name=>'Store In Charge Dashboar'
+,p_alias=>'STORE-IN-CHARGE-DASHBOAR'
+,p_step_title=>'Store In Charge Dashboar'
+,p_autocomplete_on_off=>'OFF'
+,p_page_template_options=>'#DEFAULT#'
+,p_protection_level=>'C'
+,p_last_updated_by=>'OLIUR'
+,p_last_upd_yyyymmddhh24miss=>'20220308103046'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(72686063049487017)
+,p_plug_name=>'New'
+,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
+,p_plug_template=>wwv_flow_api.id(68293448319933961)
+,p_plug_display_sequence=>10
+,p_include_in_reg_disp_sel_yn=>'Y'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_attribute_01=>'N'
+,p_attribute_02=>'HTML'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(72686142378487018)
+,p_name=>'P13_NEW'
+,p_item_sequence=>10
+,p_item_plug_id=>wwv_flow_api.id(72686063049487017)
+,p_prompt=>'New'
+,p_display_as=>'NATIVE_TEXT_FIELD'
+,p_cSize=>30
+,p_field_template=>wwv_flow_api.id(68363211348934495)
+,p_item_template_options=>'#DEFAULT#'
+,p_attribute_01=>'N'
+,p_attribute_02=>'N'
+,p_attribute_04=>'TEXT'
+,p_attribute_05=>'BOTH'
+);
+wwv_flow_api.create_page_da_event(
+ p_id=>wwv_flow_api.id(72686269030487019)
+,p_name=>'New'
+,p_event_sequence=>10
+,p_bind_type=>'bind'
+,p_bind_event_type=>'ready'
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(72686302867487020)
+,p_event_id=>wwv_flow_api.id(72686269030487019)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'Y'
+,p_action=>'NATIVE_SET_VALUE'
+,p_affected_elements_type=>'ITEM'
+,p_affected_elements=>'P13_NEW'
+,p_attribute_01=>'PLSQL_EXPRESSION'
+,p_attribute_04=>wwv_flow_string.join(wwv_flow_t_varchar2(
+':G_ORG_NO',
+''))
+,p_attribute_07=>'G_ORG_NO'
+,p_attribute_08=>'Y'
+,p_attribute_09=>'N'
+,p_wait_for_result=>'Y'
+);
+wwv_flow_api.component_end;
+end;
+/
